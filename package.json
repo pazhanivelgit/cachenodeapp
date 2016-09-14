@@ -1,0 +1,21 @@
+{
+  "name": "perkin_will_project_management",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node server.js"
+  },
+  "description": "Node application for the p+w ",
+  "main": "server.js",
+  "author": "perkin",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^2.0.1",
+    "body-parser": "^1.15.2",
+    "cfenv": "^1.0.3",
+    "express": "^4.14.0",
+    "memory-cache": "^0.1.6",
+    "mongoose": "^4.5.7",
+    "redis": "^2.6.2"
+  }
+}

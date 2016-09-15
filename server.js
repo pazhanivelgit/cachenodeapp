@@ -6,9 +6,12 @@
  * module dependencies
  */
 var express = require('express');
+var session = require('express-session');
 var bodyParser = require('body-parser');
 //var morgan = require('morgan');
 //var logger = require("./public/logger");
+var MongoStore = require('connect-mongo')(session);
+
 
 /**
  * init
@@ -16,7 +19,15 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/routes.js');
 var http_server = express();
 
-
+http_server.use(bodyParser.json());
+http_server.use(session({
+    store: new MongoStore({
+        url: process.env.MONGODB_CONN
+    }),
+    secret: '1234567890QWERTY',
+    saveUninitialized: false,
+    resave: false
+}));
 
 
 /**
